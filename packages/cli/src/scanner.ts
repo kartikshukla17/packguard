@@ -25,17 +25,19 @@ export interface ScanResult {
 
 function getPackedFiles(cwd: string): string[] {
   try {
-    const output = execSync("npm pack --dry-run --json 2>/dev/null", {
+    const output = execSync("npm pack --dry-run --json", {
       cwd,
       encoding: "utf-8",
+      stdio: ["pipe", "pipe", "pipe"],
     });
     const json = JSON.parse(output);
     const entry = Array.isArray(json) ? json[0] : json;
     return (entry?.files ?? []).map((f: { path: string }) => f.path);
   } catch {
-    const fallback = execSync("npm pack --dry-run 2>&1 || true", {
+    const fallback = execSync("npm pack --dry-run", {
       cwd,
       encoding: "utf-8",
+      stdio: ["pipe", "pipe", "pipe"],
     });
     return fallback
       .split("\n")

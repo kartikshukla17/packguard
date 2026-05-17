@@ -110,7 +110,7 @@ ${BOLD}Options:${RESET}
 
 function getVersion(): string {
   try {
-    const pkgPath = new URL("../../package.json", import.meta.url);
+    const pkgPath = new URL("../package.json", import.meta.url);
     const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"));
     return pkg.version ?? "0.1.0";
   } catch {

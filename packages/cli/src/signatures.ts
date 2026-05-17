@@ -21,7 +21,7 @@ export const SECRET_PATTERNS: Array<{ name: string; pattern: RegExp }> = [
   { name: "github_oauth", pattern: /gho_[a-zA-Z0-9]{36}/g },
   { name: "github_app", pattern: /ghs_[a-zA-Z0-9]{36}/g },
   { name: "aws_access_key", pattern: /AKIA[0-9A-Z]{16}/g },
-  { name: "aws_secret_key", pattern: /[0-9a-zA-Z\/+]{40}/g },
+  { name: "aws_secret_key", pattern: /(?:aws[_\-.]?secret[_\-.]?(?:access[_\-.]?)?key)\s*[=:"'\s]+[0-9a-zA-Z\/+]{40}/gi },
   { name: "openai_key", pattern: /sk-[a-zA-Z0-9]{48}/g },
   { name: "stripe_key", pattern: /(?:sk|pk)_(?:live|test)_[a-zA-Z0-9]{24,}/g },
   { name: "generic_bearer", pattern: /Bearer\s+[a-zA-Z0-9\-._~+/]{20,}/g },
