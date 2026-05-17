@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { scanFileList } from "packguard";
+import { scanFileList } from "../../../lib/scan";
 
 export const runtime = "nodejs";
 
