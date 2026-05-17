@@ -1,0 +1,44 @@
+{
+  "name": "packguard",
+  "version": "0.1.0",
+  "description": "Block AI assistant config leaks and secrets before npm publish",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "packguard": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "security",
+    "npm",
+    "publish",
+    "secrets",
+    "ai",
+    "claude",
+    "cursor"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kartikshukla/packguard"
+  },
+  "dependencies": {
+    "ignore": "^5.3.2",
+    "tar": "^7.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/tar": "^6.1.13",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
