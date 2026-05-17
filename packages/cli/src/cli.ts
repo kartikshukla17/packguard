@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { scanDirectory } from "./scanner.js";
 import { readFileSync, existsSync } from "fs";
+import { fileURLToPath } from "url";
 import path from "path";
 
 const RESET = "\x1b[0m";
@@ -110,7 +111,7 @@ ${BOLD}Options:${RESET}
 
 function getVersion(): string {
   try {
-    const pkgPath = new URL("../package.json", import.meta.url);
+    const pkgPath = fileURLToPath(new URL("../package.json", import.meta.url));
     const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"));
     return pkg.version ?? "0.1.0";
   } catch {

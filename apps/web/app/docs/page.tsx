@@ -73,7 +73,7 @@ export default function DocsPage() {
             CLI reference
           </h1>
           <p className="text-sm mb-12" style={{ color: "var(--fg-muted)" }}>
-            packguard v0.1 ·{" "}
+            packguard v0.1.1 ·{" "}
             <Link
               href="https://www.npmjs.com/package/packguard"
               target="_blank"

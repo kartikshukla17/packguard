@@ -53,9 +53,8 @@ function checkSourceMap(filePath: string, cwd: string): boolean {
     const full = path.join(cwd, filePath);
     if (!existsSync(full)) return false;
     const raw = readFileSync(full, { encoding: "utf-8" });
-    const slice = raw.slice(0, 16384);
-    const parsed = JSON.parse(slice);
-    return Array.isArray(parsed.sourcesContent) && parsed.sourcesContent.length > 0;
+    // Check for non-empty sourcesContent without parsing (source maps can be huge)
+    return /"sourcesContent"\s*:\s*\[(?!\s*\])/.test(raw);
   } catch {
     return false;
   }
@@ -149,7 +148,7 @@ export function scanFileList(files: string[]): Finding[] {
         file,
         severity: "warning",
         reason: "source_map_with_sources",
-        detail: "Cannot inspect content — flagged for review",
+        detail: "Source map — verify sourcesContent is empty before publishing",
       });
     }
   }

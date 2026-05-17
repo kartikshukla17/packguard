@@ -412,7 +412,7 @@ export default function Home() {
               ["Pricing", "/pricing"],
               ["Privacy", "/privacy"],
               ["Terms", "/terms"],
-              ["Contact", "mailto:kartikshukla1717@gmail.com"],
+              ["Contact", "mailto:kartikshukla1707@gmail.com"],
             ].map(([label, href]) => (
               <Link
                 key={label}
