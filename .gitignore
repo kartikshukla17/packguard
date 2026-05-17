@@ -6,3 +6,17 @@ dist/
 *.env
 .DS_Store
 *.tsbuildinfo
+
+# AI coding assistant config — exactly what PackGuard protects against
+.claude/
+.cursor/
+.codex/
+.windsurf/
+.copilot/
+.aider/
+.aider.chat.history.md
+.aider.input.history
+.codeium/
+.continue/
+AGENTS.md
+CLAUDE.md

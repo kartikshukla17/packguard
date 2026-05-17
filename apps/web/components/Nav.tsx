@@ -51,20 +51,13 @@ export default function Nav() {
         <div className="flex items-center gap-3">
           <Link
             href="/login"
-            className="text-sm"
-            style={{ color: "var(--fg-muted)" }}
-          >
-            Log in
-          </Link>
-          <Link
-            href="/pricing"
             className="text-sm font-medium px-3 py-1.5 rounded"
             style={{
               background: "var(--fg)",
               color: "var(--bg)",
             }}
           >
-            Get started
+            Early access
           </Link>
         </div>
       </div>

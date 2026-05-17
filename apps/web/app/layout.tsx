@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     description: "428 packages. 33 leaking live keys. One line to fix it.",
     url: "https://packguard.kartikshukla.dev",
     siteName: "PackGuard",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: "/og", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "PackGuard — Stop shipping your AI assistant's secrets",
     description: "428 packages. 33 leaking live keys. One line to fix it.",
-    images: ["/og.png"],
+    images: ["/og"],
   },
 };
 

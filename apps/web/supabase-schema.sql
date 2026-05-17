@@ -4,6 +4,17 @@
 -- Enable UUID extension
 create extension if not exists "pgcrypto";
 
+-- waitlist (early access signups — no auth needed)
+create table public.waitlist (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  email text not null unique,
+  source text not null default 'unknown'
+);
+alter table public.waitlist enable row level security;
+-- only service role can insert/read waitlist rows
+create policy "service role only" on public.waitlist using (false);
+
 -- orgs
 create table public.orgs (
   id uuid primary key default gen_random_uuid(),
