@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  /* PackGuard design tokens — light mode default */
+  --bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --surface-2: #F4F4F8;
+  --fg: #0A0A0F;
+  --fg-muted: #5C5C7A;
+  --border: #E2E2EE;
+  --primary: #6366F1;
+  --primary-hover: #4F46E5;
+  --primary-fg: #FFFFFF;
+  --danger: #EF4444;
+  --danger-bg: rgba(239,68,68,0.08);
+  --success: #22C55E;
+  --success-bg: rgba(34,197,94,0.08);
+  --warning: #F59E0B;
+  --warning-bg: rgba(245,158,11,0.08);
+
+  /* typography */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+[data-theme="dark"] {
+  --bg: #0A0A0F;
+  --surface: #111118;
+  --surface-2: #1A1A24;
+  --fg: #F0F0FF;
+  --fg-muted: #8888A8;
+  --border: #2A2A3A;
+  --primary: #6366F1;
+  --primary-hover: #818CF8;
+  --primary-fg: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* transitions */
+*, *::before, *::after {
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+/* blocked file flash animation */
+@keyframes flash-block {
+  0%, 100% { background-color: transparent; }
+  20% { background-color: rgba(239, 68, 68, 0.2); }
+}
+
+.flash-blocked {
+  animation: flash-block 300ms ease-out;
+}
