@@ -1,6 +1,6 @@
 {
   "name": "packguard",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Block AI assistant config leaks and secrets before npm publish",
   "type": "module",
   "main": "./dist/index.js",
